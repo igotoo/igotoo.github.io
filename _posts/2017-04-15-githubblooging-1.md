@@ -231,6 +231,6 @@ github blogging를 기존에 jeykll fork로 시도했다가 바로 중단한 것
     ```
     iMac:~ igotoo$ sudo easy_install Rouge
     ```
-### 4. 블로그 포스팅
+### 5. 블로그 포스팅
 
 ### 에필로그
