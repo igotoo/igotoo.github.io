@@ -4,11 +4,11 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "Mediator"
+title: "igotoo"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+   IT 관련 기술 공부/기록용 블로그 - Infrasturcature as code , Cloud, AWS, GCP, PaaS, IaaS, SaaS, Vagrant , Docker , Raeberry Pi, Linux, OSS, Kodi, XBMC, OSMC, Open ELEC, PLEX Markdown, Sublime Text etc.
 
-email: a-mail@mail.mail
+email: igotoo@gmail.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
 float_logo: true # true, false (default)
@@ -16,8 +16,8 @@ float_logo: true # true, false (default)
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'igotoo'
+author: 'igotoo'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
@@ -35,7 +35,7 @@ twitter_handle: '@dirkfabisch'
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
+    url:	https://twitter.com/igotoo
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
@@ -49,7 +49,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
+    url:	https://github.com/igotoo
     desc:	Fork me on github
     share_url:
     share_title:
