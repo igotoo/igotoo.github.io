@@ -41,6 +41,7 @@ categories: jekyll, github
   4.  jekyll 서버 실행 정상 설치 여부 점검 
   5.  블로그 포스트 작성 
   6. git add > commit > push 
+  7. custom domain 설정 (추후 추가)
 
   > - [Fork this repository](https://github.com/dirkfabisch/mediator)
   > - Clone it: `git clone https://github.com/YOUR-USER/mediator`
@@ -588,5 +589,95 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
   - None 을 Main으로 변경 후 정상적으로 보임
 
     ![image-20210520003005822](/assets/images/image-20210520003005822.png)
+
+
+## Custom domain 설정
+
+​	참고 : [블로그 만들기 GitHub 심화 3편 - 커스텀 도메인 (chulgil.me)](https://blog.chulgil.me/how-to-make-blog-using-github-3/), [Configuring a custom domain for your GitHub Pages site - GitHub Docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) 
+
+- github에서 custom domain를 설정할 수 있는 2가지 (subdomain, apex domain) 중 간단하고 github에서 추천하는 subdomain 방법중 custom subdomain을 적용
+
+  | Supported custom domain type | Example            |
+  | :--------------------------- | :----------------- |
+  | `www` subdomain              | `www.example.com`  |
+  | Custom subdomain             | `blog.example.com` |
+  | Apex domain                  | `example.com`      |
+
+  > We recommend always using a `www` subdomain, even if you also use an apex domain. When you create a new site with an apex domain, we automatically attempt to secure the `www` subdomain for use when serving your site's content. If you configure a `www` subdomain, we automatically attempt to secure the associated apex domain.
+  >
+  > ### [Using a subdomain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-a-subdomain-for-your-github-pages-site)
+  >
+  > A subdomain is the part of a URL before the root domain. You can configure your subdomain as `www` or as a distinct section of your site, like `blog.example.com`.
+  >
+  > Subdomains are configured with a `CNAME` record through your DNS provider.
+  >
+  > #### [`www` subdomains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#www-subdomains)
+  >
+  > A `www` subdomain is the most commonly used type of subdomain. For example, `www.example.com` includes a `www` subdomain.
+  >
+  > `www` subdomains are the most stable type of custom domain because `www` subdomains are not affected by changes to the IP addresses of GitHub's servers.
+  >
+  > #### [Custom subdomains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#custom-subdomains)
+  >
+  > A custom subdomain is a type of subdomain that doesn't use the standard `www` variant. Custom subdomains are mostly used when you want two distinct sections of your site. For example, you can create a site called `blog.example.com` and customize that section independently from `www.example.com`.
+  >
+  > ### [Using an apex domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site)
+  >
+  > An apex domain is a custom domain that does not contain a subdomain, such as `example.com`. Apex domains are also known as base, bare, naked, root apex, or zone apex domains.
+  >
+  > An apex domain is configured with an `A`, `ALIAS`, or `ANAME` record through your DNS provider.
+
+- 구글 도메인에서 cname 설정
+
+  - blg.igoto.pw 가 igotoo.github.io로 리다이렉트 할 수 있도록 도메인 별명 즉 cname을 설정 
+
+![image-20210522220538951](/assets/images/image-20210522220538951.png)
+
+- Github pages  Custom domain 설정
+
+![image-20210522220312683](/assets/images/image-20210522220312683.png)
+
+- DNS 정보 확인
+
+```bash
+> dig blg.igotoo.pw +nostats +nocomments +nocmd
+;blg.igotoo.pw.                 IN      A
+blg.igotoo.pw.          0       IN      CNAME   igotoo.github.io.
+igotoo.github.io.       0       IN      A       185.199.110.153
+igotoo.github.io.       0       IN      A       185.199.108.153
+igotoo.github.io.       0       IN      A       185.199.111.153
+igotoo.github.io.       0       IN      A       185.199.109.153
+dns1.p05.nsone.net.     0       IN      A       198.51.44.5
+dns2.p05.nsone.net.     0       IN      A       198.51.45.5
+dns3.p05.nsone.net.     0       IN      A       198.51.44.69
+dns4.p05.nsone.net.     0       IN      A       198.51.45.69
+ns-393.awsdns-49.com.   0       IN      A       205.251.193.137
+ns-692.awsdns-22.net.   0       IN      A       205.251.194.180
+ns-1339.awsdns-39.org.  0       IN      A       205.251.197.59
+ns-1622.awsdns-10.co.uk. 0      IN      A       205.251.198.86
+dns1.p05.nsone.net.     0       IN      AAAA    2620:4d:4000:6259:7:5:0:1
+```
+
+- git pull
+
+  > If you use a static site generator to build your site locally and push the generated files to GitHub, pull the commit that added the *CNAME* file to your local repository. 
+
+  - custom domain 생성시 github에서 자동으로 CNAME 파일을 생성하고 commit을 하므로 로컬 PC에 변경 사항을 적용하기 위해 필요 
+
+    ```bash
+    > git pull
+    remote: Enumerating objects: 8, done.
+    remote: Counting objects: 100% (8/8), done.
+    remote: Compressing objects: 100% (5/5), done.
+    remote: Total 7 (delta 2), reused 0 (delta 0), pack-reused 0
+    Unpacking objects: 100% (7/7), 644 bytes | 7.00 KiB/s, done.
+    From https://github.com/igotoo/igotoo.github.io
+       1dd236d..3e6334a  main       -> origin/main
+    Updating 1dd236d..3e6334a
+    Fast-forward
+     CNAME | 1 +
+     1 file changed, 1 insertion(+)
+     create mode 100644 CNAME
+    ```
 
     
