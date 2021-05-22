@@ -57,7 +57,7 @@ categories: jekyll, github
 
 [dirkfabisch/mediator: a medium inspired jekyll theme (github.com)](https://github.com/dirkfabisch/mediator) 에서 우측상단 포크 버튼 클릭
 
-![image-20210519191904785](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210519191904785.png)
+![image-20210519191904785](/assets/images/image-20210519191904785.png)
 
 ### fork 란?
 
@@ -65,7 +65,7 @@ categories: jekyll, github
 
 >fork는 다른 사람의 Github repository에서 내가 어떤 부분을 수정하거나 추가 기능을 넣고 싶을 때 해당 respository를 내 Github repository로 그대로 복제하는 기능이다. fork한 저장소는 원본(다른 사람의 github repository)와 연결되어 있다. 여기서 연결 되어 있다는 의미는 original repository에 어떤 변화가 생기면(새로운 commit) 이는 그대로 forked된 repository로 반영할 수 있다. 이 때 fetch나 rebase의 과정이 필요하다.
 >
->![img](D:\Blog\mediator\assets\images\gitfork.png)
+>![img](/assets/images/gitfork.png)
 >
 >[Forking a Repository - How to Use Git and GitHub](https://youtu.be/D2j0zebizdw) 내용을 참고했습니다.
 >
@@ -578,15 +578,15 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 
 - 예전 블로그
 
-![image-20210520000148451](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210520000148451.png)
+![image-20210520000148451](/assets/images/image-20210520000148451.png)
 
 - 예전 블로그 삭제후 404 Not Found Error 발생
   - 원인 : 페이지 소스가 None으로 되어 있었음
 
-    ![image-20210520002914315](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210520002914315.png)
+    ![image-20210520002914315](/assets/images/image-20210520002914315.png)
 
   - None 을 Main으로 변경 후 정상적으로 보임
 
-    ![image-20210520003005822](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210520003005822.png)
+    ![image-20210520003005822](/assets/images/image-20210520003005822.png)
 
     
