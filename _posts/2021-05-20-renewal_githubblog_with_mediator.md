@@ -446,7 +446,7 @@ Configuration file: /mnt/d/Blog/mediator/_config.yml
 
 ```
 
-![image-20210519215454781](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210519215454781.png)
+![image-20210519215454781](/assets/images/image-20210519215454781.png)
 
 ## 블로그 게시하기
 
