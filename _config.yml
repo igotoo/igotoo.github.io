@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "igotoo"
 description: > # this means to ignore newlines until "email:"
-   IT 관련 기술 공부/기록용 블로그 - Infrasturcature as code , Cloud, AWS, GCP, PaaS, IaaS, SaaS, Vagrant , Docker , Raeberry Pi, Linux, OSS, Kodi, XBMC, OSMC, Open ELEC, PLEX Markdown, Sublime Text etc.
+   IT 관련 기술 공부/기록용 블로그
 
 email: igotoo@gmail.com
 #blog logo
