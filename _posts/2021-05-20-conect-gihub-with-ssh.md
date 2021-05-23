@@ -4,12 +4,9 @@ title: "github 접속을 https에서 ssh 접속으로 변경하기"
 date: 2021-05-20 00:14:10 +0900
 categories:  rsa, github, ssh, ssh-agent
 ---
-
 ##  Key 생성
-
 - 개인키(private key)와 공인키(public key) 생성
 - ssh-keygen -t ed25519 -C "github 로그인 메일 아이디"
-
 ```bash
 > ssh-keygen -t ed25519 -C "igotoo@gmail.com"
 Generating public/private ed25519 key pair.
@@ -41,7 +38,6 @@ drwxr-xr-x 14 igotoo igotoo 4096 May 23 19:08 ..
 ```
 
 ## 개인 key ssh-agent 에 등록 
-
 - ssh-agent 
   - 공개키 인증을 위한 개인키를 보관하는 프로그램으로 다른 서버를 로그인시 인증에 사용된다.
   - 공개키는 접속하려는 서버에 저장되어 있어야 한다.(이경우 github 서버)
@@ -50,24 +46,19 @@ drwxr-xr-x 14 igotoo igotoo 4096 May 23 19:08 ..
 - 등록방법 
   - ssh-agent 백그라운드 실행 : eval "$(ssh-agent -s)"
   - ssh-add로 개인키 등록 : ssh-add ~/.ssh/개인키파일명
-
 ```bash
 > eval "$(ssh-agent -s)"
 Agent pid 611
 > ssh-add ~/.ssh/id_ed25519
 Identity added: /home/igotoo/.ssh/id_ed25519 (igotoo@gmail.com)
 ```
-
 - ssh-agent를 eval로 실행 시키는 이유
-
   - eval는 명령
-
     >  [명령 치환](https://mug896.github.io/bash-shell/exp_and_sub/command_substitution.html) 결과로 shell 에서 실행 가능한 명령문이 나온다면 그 명령은 기본적으로 실행이 가능합니다. 하지만 명령문이 조금 복잡해져서 파이프나 redirections, quotes 등이 사용된다면 이제는 그 명령문은 실행할 수 없게 됩니다. 왜냐하면 명령문에서 사용되는 shell 키워드, 메타문자들, quotes 등은 [확장과 치환](https://mug896.github.io/bash-shell/expansions_and_substitutions.html) 이전에 해석이 완료되기 때문입니다. 따라서 이와 같은 경우에도 실행이 가능하게 해주는 명령이 eval 명령입니다. eval 은 인수로 주어지는 스트링을 한번 evaluation 한 후에 결과를 다시 명령문으로 실행합니다.
     >
     > 출처 : [eval | Introduction (mug896.github.io)](https://mug896.github.io/bash-shell/eval.html)
 
   - 다음과 같이 ssh-agent를 실행하는 경우 환경변수를 셋팅하고 백그라운드로 실행되어야 하는데 eval를 사용하는 경우 명령문에서 먼저 해석이 되어 환경 변수가 셋팅 되지 않는다.
-
   ```bash
   > env | grep -i SSH
   SSH_AUTH_SOCK=
@@ -85,15 +76,12 @@ Identity added: /home/igotoo/.ssh/id_ed25519 (igotoo@gmail.com)
   SSH_AUTH_SOCK=/tmp/ssh-5vZqJr5zfN7B/agent.1468
   SSH_AGENT_PID=1469
   ```
-
-- ## github 등록
-
+## github 등록
 - 개인 페이지 설정에서 공개키 (id_ed25519.pub)을 복사 붙여넣기로 등록
 
 ![image-20210523193547902](/assets/images/image-20210523193547902.png)
 
 ## remote origin (github 서버) 변경 
-
 - https://github.com/igotoo/igotoo.github.io.git 에서 git@github.com:사용자id/사용자 레파지토리 명으로 변경
   - 기존 remote origin 삭제
   - ssh 접속 정보로 remote orgin 등록 
@@ -114,7 +102,6 @@ fatal: The current branch main has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin main
-
 
 > git push --set-upstream origin main
 The authenticity of host 'github.com (15.164.81.167)' can't be established.
@@ -138,10 +125,7 @@ Everything up-to-date
 /mnt/d/Blog/mediator main
 ```
 
-
-
 ## 검증 테스트 
-
 - ssh-agent  및 ~/.ssh/config 파일 역할 검증
 
 ```bash
@@ -174,19 +158,13 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:igotoo/igotoo.github.io.git
    f1dce52..346a1d4  main -> main
 ```
-
 - ssh-agent 실행 필요 여부  :  실행 필요없음, git push/pull 등 github 접속이 필요할 경우 ssh-agent 자동 실행하는 것을 추정됨 
-
 - ~/.ssh/config 사용 여부  : 설정파일이 없어도 ssh-agent에 github에 접속 정보 즉 개인키를 등록해 놓았으므로 별도 설정은 불필요
 
-
-
 ## WRAP UP
-
 - github 접속을 https에서 ssh접속으로 변경하여 매번 ip/pwd 입력 불필요
 - 개인키를 등록한 ssh-agent가 실행시 설정하는 환경변수를(pid, sock) 이용 다른 서버 접속시 자동으로 공개키 인증
-- 다른 방법으로는 사용자 ssh 설정파일 (~/.ssh/config)에 호스트명(예 : giithub.com) , 개인키 파일 정보(id_ed25519)와 사용자 이름 정보를 등록하여 자동 인증 가능
-
+- 다른 방법으로는 사용자 ssh 설정파일 (~/.ssh/config)에 호스트명(예 : giithub.com) , 개인키 파일 정보(id_ed25519)와 사용자 이름 정보를 등록하여 자동 인증 가능 
 - 참고 :
   - [Connecting to GitHub with SSH - GitHub Docs](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
   -  [Github 다수 계정을 위한 SSH key 설정 :: 마이구미 :: 마이구미의 HelloWorld (tistory.com)](https://mygumi.tistory.com/96)
