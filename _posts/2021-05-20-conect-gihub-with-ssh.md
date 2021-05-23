@@ -79,7 +79,7 @@ Identity added: /home/igotoo/.ssh/id_ed25519 (igotoo@gmail.com)
 ## github 등록
 - 개인 페이지 설정에서 공개키 (id_ed25519.pub)을 복사 붙여넣기로 등록
 
-![image-20210523193547902](/assets/images/image-20210523193547902.png)
+![image-20210523193547902](/assets/images/ximage-20210523193547902.png)
 
 ## remote origin (github 서버) 변경 
 - https://github.com/igotoo/igotoo.github.io.git 에서 git@github.com:사용자id/사용자 레파지토리 명으로 변경
