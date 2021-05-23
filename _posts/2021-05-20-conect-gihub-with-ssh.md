@@ -16,7 +16,7 @@ Enter same passphrase again:
 Your identification has been saved in /home/igotoo/.ssh/id_ed25519
 Your public key has been saved in /home/igotoo/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:c62zCE0hCHtamHW5xlXcgSvvXsb91ekYnLOuhh/GcNc igotoo@gmail.com
+SHA256:c62zCE0hCHtsdfsdfgSvvXsb91edsfskYnLOuhh/GcNc igotoo@gmail.com
 The key's randomart image is:
 +--[ED25519 256]--+
 |  . . .. o.o..   |
