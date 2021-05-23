@@ -90,7 +90,7 @@ Identity added: /home/igotoo/.ssh/id_ed25519 (igotoo@gmail.com)
 
 - 개인 페이지 설정에서 공개키 (id_ed25519.pub)을 복사 붙여넣기로 등록
 
-![image-20210523193547902](C:\Users\jb.won\AppData\Roaming\Typora\typora-user-images\image-20210523193547902.png)
+![image-20210523193547902](/assets/images/image-20210523193547902.png)
 
 ## remote origin (github 서버) 변경 
 
