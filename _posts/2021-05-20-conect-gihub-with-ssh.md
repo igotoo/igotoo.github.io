@@ -1,14 +1,9 @@
-\---
-
+---
 layout: post
-
 title: "github 접속을 https에서 ssh 접속으로 변경하기"
-
 date: 2021-05-20 00:14:10 +0900
-
 categories:  rsa, github, ssh, ssh-agent
-
-\---
+---
 
 ##  Key 생성
 
