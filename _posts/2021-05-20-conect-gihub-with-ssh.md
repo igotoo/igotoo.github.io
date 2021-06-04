@@ -137,7 +137,6 @@ Everything up-to-date
  
 > ps -ef|grep ssh-agent
 igotoo     886   271  0 19:21 pts/2    00:00:00 man ssh-agent
-igotoo    1228     9  0 20:01 pts/0    00:00:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox ssh-agent
 
 > cat ~/.ssh/config
 #Host github.com
