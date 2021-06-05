@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "# WSL2에서 Host IP 자동으로 구하기"
+title: "WSL2에서 Host IP 자동으로 구하기"
 date: 2021-05-27 00:14:10 +0900
 categories: wsl2, ssh, nameserver
 ---
@@ -83,6 +83,5 @@ categories: wsl2, ssh, nameserver
 
 ## 참고
 
--
-[Comparing WSL 1 and WSL 2](https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-windows-networking-apps-from-linux-host-ip)
+- [Comparing WSL 1 and WSL 2](https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-windows-networking-apps-from-linux-host-ip)
 - [WSL 2의 네트워크 통신 방법](https://www.sysnet.pe.kr/2/0/12347)

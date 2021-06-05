@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""Windows에서 WSL2/Vagrant/VBox로 Ansible 실습"
+title:  "Windows에서 WSL2/Vagrant/VBox로 Ansible 실습"
 date:   2021-06-05 09:000:35 +0900
 categories: WSL2, Vagrant, VirtualBox
 ---
