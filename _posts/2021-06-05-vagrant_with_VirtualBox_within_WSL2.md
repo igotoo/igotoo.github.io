@@ -120,11 +120,8 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
 - 저자 github clone
     - 명령어 : git clone [git@github.com](mailto:git@github.com):geerlingguy/ansible-for-devops.git
     - 위치 :  /mnt/d/Ansible-Handson/ans-for-devops
-
 ## vm 생성
-
 - vagrantfile
-
 ```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -152,7 +149,6 @@ end
 ```
 ### config.vm.provision "ansible_local"
 - config.vm.provision = ansible로 할경우 호스트 즉 windows10에 ansible을 설치 하라는 에러가 발생함. Windows10에서는 ansible을 설치 할 수 없으므로 ansible_local로 provision 해야 함
-
 ```bash
 ansible [core 2.11.1]
   config file = /etc/ansible/ansible.cfg
@@ -179,7 +175,6 @@ on your host system. Vagrant can't do this for you in a safe and
 automated way.
 Please check https://docs.ansible.com for more information.
 ```
-
 ### synced folder : config.vm.synced_folder '.', '/vagrant'
 
 - ansible_local provision을 할 경우 playbook이 호스와 게스트 공유폴더를 통해 공유 되어야 함
