@@ -123,6 +123,7 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
 
 ## vm 생성
 - vagrantfile
+
 ```
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -185,6 +186,7 @@ Please check https://docs.ansible.com for more information.
 - ansible_local provision을 통해 Drupal 설치
 - playbook.yml 등 설치 참고 : https://github.com/geerlingguy/ansible-for-devops/tree/master/drupal
 - 설치 결과
+  
 ```bash
 > vagrant provision
 ==> default: Running provisioner: ansible_local...
