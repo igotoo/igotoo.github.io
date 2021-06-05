@@ -25,7 +25,7 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
 
 - 호스트 vagrant(windows 10)와 WSL2 vagrant 버전 통일
 
-    > NOTE: When Vagrant is installed on the Windows system the version installed within the Linux distribution must match.'
+    % NOTE: When Vagrant is installed on the Windows system the version installed within the Linux distribution must match.'
 
     - 에러 메세지
 
@@ -40,9 +40,9 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
     - WSL2 vagrant 삭제후 재 설치
 
     ```bash
-    > wget https://releases.hashicorp.com/vagrant/2.2.16/vagrant_2.2.16_linux_amd64.zip
-    > unzip vagrant_2.2.16_linux_amd64.zip
-    > sudo mv ./vagrant /usr/local/bin/vagrant
+    % wget https://releases.hashicorp.com/vagrant/2.2.16/vagrant_2.2.16_linux_amd64.zip
+    % unzip vagrant_2.2.16_linux_amd64.zip
+    % sudo mv ./vagrant /usr/local/bin/vagrant
     ```
 
 - basdtar 설치
@@ -61,7 +61,7 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
     - 설치
 
     ```bash
-    > sudo apt install libarchive-tools
+    % sudo apt install libarchive-tools
     ```
 
 - ssh 오류 해결
@@ -90,18 +90,18 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
     - private key 권한 변경 시 리눅스 파일 시스템 권한 설정 기능 필요
     - wsl.conf의 역할 : WSL 실행시 자동 구성 수행
 
-        > Automatically configure functionality in WSL that will be applied every time you launch the subsystem using `wsl.conf`. This includes automount options and network configuration.
+        % Automatically configure functionality in WSL that will be applied every time you launch the subsystem using `wsl.conf`. This includes automount options and network configuration.
 
-        > `wsl.conf` is located in each Linux distribution in `/etc/wsl.conf`.
+        % `wsl.conf` is located in each Linux distribution in `/etc/wsl.conf`.
 
     - automout  / metata
 
-        > metadata	Whether metadata is added to Windows files to support Linux system permissions
+        % metadata	Whether metadata is added to Windows files to support Linux system permissions
 
     - 설정 내용
 
     ```bash
-    > cat /etc/wsl.conf
+    % cat /etc/wsl.conf
     [automount]
     options = "metadata"
     ```
@@ -120,6 +120,7 @@ WSL2에 Vagrant를 설치하여 호스트에 설치된 virtualbox을 활용하�
 - 저자 github clone
     - 명령어 : git clone [git@github.com](mailto:git@github.com):geerlingguy/ansible-for-devops.git
     - 위치 :  /mnt/d/Ansible-Handson/ans-for-devops
+
 ## vm 생성
 - vagrantfile
 ```ruby
@@ -185,8 +186,8 @@ Please check https://docs.ansible.com for more information.
 - playbook.yml 등 설치 참고 : https://github.com/geerlingguy/ansible-for-devops/tree/master/drupal
 - 설치 결과
 ```bash
-> vagrant provision
-==> default: Running provisioner: ansible_local...
+% vagrant provision
+==% default: Running provisioner: ansible_local...
     default: Installing Ansible...
     default: Running ansible-playbook...
 
@@ -211,8 +212,8 @@ TASK [Disable the firewall (since this is for local dev only).] ****************
 changed: [default]
 
 TASK [Start Apache, MySQL, and PHP.] *******************************************
-ok: [default] => (item=apache2)
-ok: [default] => (item=mysql)
+ok: [default] =% (item=apache2)
+ok: [default] =% (item=mysql)
 
 TASK [Enable Apache rewrite module (required for Drupal).] *********************
 changed: [default]
@@ -269,7 +270,7 @@ changed: [default]
 PLAY RECAP *********************************************************************
 default                    : ok=24   changed=20   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-> ssh vagrant@172.17.47.225 -p 2222
+% ssh vagrant@172.17.47.225 -p 2222
 vagrant@172.17.47.225's password:
 Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-42-generic x86_64)
 ```
@@ -278,4 +279,4 @@ Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-42-generic x86_64)
     - vm 생성시 지정했던 IP 192.168.88.8로 웹브라우저를 통해 접속 가능
     - private ntework 즉 virtual host-only network로 호스트 - 게스트 vm간 통신 가능
 
-![이미지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1318489-f7c8-4471-bfc2-c95afb55a5e2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T001421Z&X-Amz-Expires=86400&X-Amz-Signature=482a108a9b3a10297f269d541a5829af0a576a1945715d34e79591493740ecbf&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![이미지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1318489-f7c8-4471-bfc2-c95afb55a5e2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5% 2F20210605% 2Fus-west-2% 2Fs3% 2Faws4_request&X-Amz-Date=20210605T001421Z&X-Amz-Expires=86400&X-Amz-Signature=482a108a9b3a10297f269d541a5829af0a576a1945715d34e79591493740ecbf&X-Amz-SignedHeaders=host&response-content-disposition=filename% 20% 3D% 22Untitled.png% 22)
