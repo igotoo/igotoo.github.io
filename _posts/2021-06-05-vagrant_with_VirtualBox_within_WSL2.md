@@ -152,23 +152,6 @@ end
 ### config.vm.provision "ansible_local"
 - config.vm.provision = ansible로 할경우 호스트 즉 windows10에 ansible을 설치 하라는 에러가 발생함. Windows10에서는 ansible을 설치 할 수 없으므로 ansible_local로 provision 해야 함
 ```bash
-ansible [core 2.11.1]
-  config file = /etc/ansible/ansible.cfg
-  configured module search path = ['/home/igotoo/.ansible/plugins/modules', '/usr/share/ansible/plugin
-                                                                                                     ns/modules']
-  ansible python module location = /home/igotoo/.local/lib/python3.8/site-packages/ansible
-  ansible collection location = /home/igotoo/.ansible/collections:/usr/share/ansible/collections
-  executable location = /usr/local/bin/ansible
-  python version = 3.8.5 (default, Jan 27 2021, 15:41:15) [GCC 9.3.0]
-  jinja version = 2.10.1
-  libyaml = True
-
-and falls back on the compatibility mode '1.8'.
-
-Alternatively, the compatibility mode can be specified in your Vagrantfile:
-https://www.vagrantup.com/docs/provisioning/ansible_common.html#compatibility_mode
-
-    default: Running ansible-playbook...
 The Ansible software could not be found! Please verify
 that Ansible is correctly installed on your host system.
 
@@ -281,4 +264,4 @@ Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-42-generic x86_64)
     - vm 생성시 지정했던 IP 192.168.88.8로 웹브라우저를 통해 접속 가능
     - private ntework 즉 virtual host-only network로 호스트 - 게스트 vm간 통신 가능
 
-![이미지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1318489-f7c8-4471-bfc2-c95afb55a5e2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T001421Z&X-Amz-Expires=86400&X-Amz-Signature=482a108a9b3a10297f269d541a5829af0a576a1945715d34e79591493740ecbf&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![이미지](/assets/images/drupal.png)
