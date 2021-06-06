@@ -151,6 +151,7 @@ end
 ```
 ### config.vm.provision "ansible_local"
 - config.vm.provision = ansible로 할경우 호스트 즉 windows10에 ansible을 설치 하라는 에러가 발생함. Windows10에서는 ansible을 설치 할 수 없으므로 ansible_local로 provision 해야 함
+
 ```bash
 The Ansible software could not be found! Please verify
 that Ansible is correctly installed on your host system.
@@ -160,8 +161,8 @@ on your host system. Vagrant can't do this for you in a safe and
 automated way.
 Please check https://docs.ansible.com for more information.
 ```
-### synced folder : config.vm.synced_folder '.', '/vagrant'
 
+### synced folder : config.vm.synced_folder '.', '/vagrant'
 - ansible_local provision을 할 경우 playbook이 호스와 게스트 공유폴더를 통해 공유 되어야 함
 - 예전 Episode에서슨 synced folder bug로 disable 권고 → bug 해결 : [https://github.com/hashicorp/vagrant/pull/12056](https://github.com/hashicorp/vagrant/pull/12056)
 
